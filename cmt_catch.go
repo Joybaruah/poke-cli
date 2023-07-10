@@ -1,11 +1,16 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"math/rand"
 )
 
 func callbackCatch(cfg *config, args ...string) error {
+
+	if len(args) != 1 {
+		return errors.New("pokemon name not provided")
+	}
 
 	pokemonName := args[0]
 
